@@ -2,7 +2,7 @@ from web3 import Web3
 import time
 
 # Konfigurasi RPC dan Web3
-RPC_URL = "http://rpc-testnet.inichain.com"
+RPC_URL = "https://rpc-mainnet.inichain.com"
 web3 = Web3(Web3.HTTPProvider(RPC_URL))
 
 # Pastikan koneksi ke node berhasil
@@ -32,7 +32,7 @@ def send_transaction(private_key, source_address, target_address, amount):
         'value': amount,
         'gas': GAS_LIMIT,
         'gasPrice': GAS_PRICE,
-        'chainId': 7234,  # Tambahkan chain ID untuk EIP-155
+        'chainId': 7233,  # Tambahkan chain ID untuk EIP-155
     }
 
     signed_tx = web3.eth.account.sign_transaction(tx, private_key)
